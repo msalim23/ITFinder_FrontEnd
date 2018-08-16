@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { IProduit } from '../domain/iproduit';
+import { ProduitsService } from '../services/produits.service';
 
 @Component({
   selector: 'app-products-list',
@@ -7,17 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductsListComponent implements OnInit {
 
-  data: any[];
+  data: IProduit[];
 
-  constructor() { }
+  compteur: number;
+
+  arriereplan = 'yellow';
+
+  constructor( private _service: ProduitsService) { }
 
   ngOnInit() {
 
-    this.data = [
-      {'code': 'P100', 'titre': 'Cafe', 'prixUnitaire': 5.5},
-      {'code': 'P200', 'titre': 'The', 'prixUnitaire': 4.5},
-      {'code': 'P300', 'titre': 'Jus', 'prixUnitaire': 6}
-    ];
-  }
+    // this.data$ = this._service.getProduits();
+     this._service.getProduits().subscribe (resp => this.data = resp, erreur => console.log('ATTENTION erreur : ' + erreur));
+    this.compteur = 0;
 
+  }
+  incrementer() {
+    this.compteur++;
+  }
 }

@@ -1,9 +1,12 @@
+<button type="submit" (click)="incrementer()">Incrementer</button>
+<div [style.background]="arriereplan">{{compteur}}</div>
+
 <div class="card" class="mt-3">
   <div class="card-header text-white bg-info">
     <h3>Liste de produits</h3>
   </div>
   <div class="card-body">
-    <table class="table table-bordered table-striped">
+    <table *ngIf="data && data.length" class="table table-bordered table-striped">
       <thead>
         <tr>
           <th>Code</th>
@@ -15,7 +18,7 @@
         <tr *ngFor="let p of data">
           <td scope="row">{{p.code}}</td>
           <td>{{p.titre}}</td>
-          <td>{{p.prixUnitaire}}</td>
+          <td>{{p.prixUnitaire | currency: 'EUR':'symbol'}}</td>
         </tr>
 
       </tbody>
