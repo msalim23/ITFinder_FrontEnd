@@ -11,6 +11,15 @@ export class ProduitsService {
   URL = 'http://localhost:8080/produits/';
   constructor(private _Http: HttpClient) { }
 
+  addProduit(produit: IProduit): Observable<any> {
+    return this._Http.post(this.URL, produit);
+  }
+
+
+  getProduitById(id: string): Observable<IProduit> {
+    return this._Http.get<IProduit>(this.URL + id);
+  }
+
 
   getProduits(): Observable<IProduit[]> {
 

@@ -1,0 +1,28 @@
+<form #f="ngForm" (ngSubmit)="addProduit()">
+
+  <div class="form-group">
+    <label for="code">Code produit</label>
+    <input type="text" class="form-control" name="code" id="code"
+        placeholder="Code du produit" [(ngModel)]="produit.code" #code="ngModel" required>
+    <div class="alert alert-danger" *ngIf="code.touched && code.invalid">Le code est obligatoire</div>
+  </div>
+
+  <div class="form-group">
+    <label for="titre">Titre produit</label>
+    <input type="text" class="form-control" name="titre" id="titre"
+        placeholder="Titre du produit" [(ngModel)]="produit.titre" #titre="ngModel" required minlength="3">
+    <div class="alert alert-danger" *ngIf="titre.touched && titre.invalid">
+      <div *ngIf="titre.errors.required">Le titre est obligatoire</div>
+      <div *ngIf="titre.errors.minlength">longueur doit etre supérieur a 3</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="prix">Prix produit</label>
+    <input type="number" class="form-control" name="prix" id="prix"
+        placeholder="Prix du produit" [(ngModel)]="produit.prixUnitaire" #prix="ngModel" required>
+    <div class="alert alert-danger" *ngIf="prix.touched && prix.invalid">Le prix est obligatoire</div>
+  </div>
+
+  <button type="submit" class="btn btn-primary" [disabled]="f.invalid"> Créer le produit</button>
+</form>

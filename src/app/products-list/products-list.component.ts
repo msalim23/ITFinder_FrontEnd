@@ -13,7 +13,7 @@ export class ProductsListComponent implements OnInit {
 
   compteur: number;
 
-  arriereplan = 'yellow';
+  arriereplan = 'lightblue';
 
   constructor( private _service: ProduitsService) { }
 
