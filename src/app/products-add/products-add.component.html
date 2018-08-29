@@ -1,4 +1,4 @@
-<form #f="ngForm" (ngSubmit)="addProduit()">
+<form #f="ngForm" (ngSubmit)="addJob()">
 
   <div class="form-group">
     <label for="code">Code produit</label>
@@ -8,9 +8,9 @@
   </div>
 
   <div class="form-group">
-    <label for="titre">Titre produit</label>
+    <label for="titre">Titre du job</label>
     <input type="text" class="form-control" name="titre" id="titre"
-        placeholder="Titre du produit" [(ngModel)]="produit.titre" #titre="ngModel" required minlength="3">
+        placeholder="Titre du job" [(ngModel)]="job.titre" #titre="ngModel" required minlength="3">
     <div class="alert alert-danger" *ngIf="titre.touched && titre.invalid">
       <div *ngIf="titre.errors.required">Le titre est obligatoire</div>
       <div *ngIf="titre.errors.minlength">longueur doit etre supérieur a 3</div>
@@ -18,11 +18,10 @@
   </div>
 
   <div class="form-group">
-    <label for="prix">Prix produit</label>
-    <input type="number" class="form-control" name="prix" id="prix"
-        placeholder="Prix du produit" [(ngModel)]="produit.prixUnitaire" #prix="ngModel" required>
-    <div class="alert alert-danger" *ngIf="prix.touched && prix.invalid">Le prix est obligatoire</div>
+    <label for="description">Description du job</label>
+    <input type="text" class="form-control" name="description" id="description"
+        placeholder="Description" [(ngModel)]="job.description" #prix="ngModel" required>
+    <div class="alert alert-danger" *ngIf="prix.touched && prix.invalid">La description est obligatoire</div>
   </div>
-
-  <button type="submit" class="btn btn-primary" [disabled]="f.invalid"> Créer le produit</button>
+  <button type="submit" class="btn btn-primary" [disabled]="f.invalid"> Ajouter le job</button>
 </form>

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { IProduit } from '../domain/iproduit';
-import { ProduitsService } from '../services/produits.service';
+
 import { Route, Router } from '../../../node_modules/@angular/router';
+import { JobsService } from '../services/jobs.service';
+import { IJob } from '../domain/ijob';
 
 @Component({
   selector: 'app-products-add',
@@ -10,18 +11,18 @@ import { Route, Router } from '../../../node_modules/@angular/router';
 })
 export class ProductsAddComponent implements OnInit {
 
-  produit: IProduit = {
-    code: '', titre: '', prixUnitaire: 0
+  job: IJob = {
+    id: '', titre: '', description: ''
   };
 
 
-  constructor(private _service: ProduitsService, private _router: Router) { }
+  constructor(private _service: JobsService, private _router: Router) { }
 
   ngOnInit() {
   }
 
   addProduit() {
-    this._service.addProduit(this.produit).subscribe(resp => console.log('creation avec succes'));
+    this._service.addJob(this.job).subscribe(resp => console.log('creation avec succes'));
 
     this._router.navigate(['/list']);
   }
