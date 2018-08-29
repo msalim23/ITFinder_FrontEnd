@@ -1,13 +1,6 @@
 <form #f="ngForm" (ngSubmit)="addJob()">
 
   <div class="form-group">
-    <label for="code">Code produit</label>
-    <input type="text" class="form-control" name="code" id="code"
-        placeholder="Code du produit" [(ngModel)]="produit.code" #code="ngModel" required>
-    <div class="alert alert-danger" *ngIf="code.touched && code.invalid">Le code est obligatoire</div>
-  </div>
-
-  <div class="form-group">
     <label for="titre">Titre du job</label>
     <input type="text" class="form-control" name="titre" id="titre"
         placeholder="Titre du job" [(ngModel)]="job.titre" #titre="ngModel" required minlength="3">
@@ -19,9 +12,9 @@
 
   <div class="form-group">
     <label for="description">Description du job</label>
-    <input type="text" class="form-control" name="description" id="description"
-        placeholder="Description" [(ngModel)]="job.description" #prix="ngModel" required>
-    <div class="alert alert-danger" *ngIf="prix.touched && prix.invalid">La description est obligatoire</div>
+    <textarea class="form-control" name="description" id="description" rows="5"
+          placeholder="Description" [(ngModel)]="job.description" #description="ngModel" required></textarea>
+    <div class="alert alert-danger" *ngIf="description.touched && description.invalid">La description est obligatoire</div>
   </div>
   <button type="submit" class="btn btn-primary" [disabled]="f.invalid"> Ajouter le job</button>
 </form>

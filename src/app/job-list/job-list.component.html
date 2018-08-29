@@ -1,23 +1,68 @@
 <h1>Jobs</h1>
-<a class="nav-link" routerLink="/jobs-add">Ajouter un job</a>
-<div class="container">
+
+<button type="button" class="btn btn-primary" [routerLink]="['/jobs-add']" routerLinkActive="router-link-active" >Ajouter un job</button>
+<div class="input-group col col-3 float-right">
+    <input type="text" class="form-control" placeholder="Chercher un job">
+    <span class="input-group-btn">
+      <button class="btn btn-secondary" type="button">Rechercher</button>
+    </span>
+  </div>
+  <hr>
+<!-- <div class="container"> -->
   <div class="row">
-    <div class="card col-lg-4 ml-0">
+   <div class="col col-lg-2">
+    <div class="card">
       <img class="card-img-top" src="holder.js/100x180/" alt="">
       <div class="card-body">
-        <h4 class="card-title">Title</h4>
-        <p class="card-text">Text</p>
+        <h3 class="card-title">Filtres</h3>
+        <div class="form-check">
+          <label class="form-check-label">
+            <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" checked>
+            Java
+          </label>
+          <br>
+          <label class="form-check-label">
+              <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" checked>
+              C#
+            </label>
+            <br>
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" checked>
+                Python
+              </label>
+              <br>
+              <h5>Regions</h5>
+              <select class="form-control form-control-sm" aria-placeholder="region">
+                  <option>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                      <label class="form-check-label" for="defaultCheck1">
+                        Bruxelles
+                      </label>
+                    </div>
+                  </option>
+                  <option>Wallonie</option>
+                  <option>Flandre</option>
+                </select>
+
+        </div>
+      </div>
       </div>
     </div>
-    <div class="list-group col-lg-8" *ngFor="let j of job">
+
+    <div class="col-md-auto">
+    </div>
+
+    <div class="col">
+    <div class="list-group" *ngFor="let j of job">
       <a [routerLink]="['/detail', j.id]" class="list-group-item list-group-item-action flex-column align-items-start my-2">
       <div class="d-flex w-100 justify-content-between">
       <h5 class="mb-1">{{j.titre}}</h5>
-
       </div>
       <p class="mb-1">{{j.description}}</p>
       <small>{{j.id}}</small>
       </a>
     </div>
+    </div>
   </div>
-</div>
+<!-- </div> -->
