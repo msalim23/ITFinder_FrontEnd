@@ -32,6 +32,7 @@ export class ProductsDetailsComponent implements OnInit, OnDestroy {
     this._router.navigate(['/jobs']);
   }
 
+
   // It is advised to unsubscribe in ngOnDestroy
   ngOnDestroy(): void {
     this.subscription.unsubscribe();

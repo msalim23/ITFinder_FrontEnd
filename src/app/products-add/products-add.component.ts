@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Route, Router } from '../../../node_modules/@angular/router';
+import { Router } from '../../../node_modules/@angular/router';
 import { JobsService } from '../services/jobs.service';
 import { IJob } from '../domain/ijob';
 

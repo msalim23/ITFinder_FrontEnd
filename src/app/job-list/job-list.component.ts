@@ -14,8 +14,8 @@ export class JobListComponent implements OnInit {
   constructor(private _service: JobsService) { }
 
   ngOnInit() {
-    this.job = this._service.getJobs();
-    // this._service.getJobs(); // .subscribe(resp => this.job = resp, erreur => console.log('ATTENTION erreur : ' + erreur));
+    // this.job = this._service.getJobs();
+    this._service.getJobs().subscribe (resp => this.job = resp, erreur => console.log('ATTENTION erreur : ' + erreur));
   }
 
 }

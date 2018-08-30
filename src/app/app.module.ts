@@ -6,7 +6,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import {HttpClientModule} from '@angular/common/http';
 
-import { RouterModule, Router, Route} from '@angular/router';
+import { RouterModule, Route} from '@angular/router';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { ProductsDetailsComponent } from './products-details/products-details.component';
 import { NotFoundComponent } from './not-found/not-found.component';
@@ -16,6 +16,8 @@ import { JobListComponent } from './job-list/job-list.component';
 import { EspacePersoComponent } from './espace-perso/espace-perso.component';
 import { ProfilComponent } from './profil/profil.component';
 import { ForumComponent } from './forum/forum.component';
+import { PostulationComponent } from './postulation/postulation.component';
+import { InscriptionComponent } from './inscription/inscription.component';
 
 
 const routes: Route [] = [
@@ -23,6 +25,8 @@ const routes: Route [] = [
   {path: 'jobs', 'component': JobListComponent},
   {path: 'jobs-add', 'component': ProductsAddComponent, canActivate: [ProducCreateGuard]},
   {path: 'detail/:id', 'component': ProductsDetailsComponent},
+  {path: 'postulation', 'component': PostulationComponent},
+  {path: 'inscription', 'component': InscriptionComponent},
   {path: '', redirectTo: 'welcome', pathMatch: 'full'},
   {path: 'espace-perso', 'component': EspacePersoComponent},
   {path: 'profil', 'component': ProfilComponent},
@@ -42,7 +46,9 @@ const routes: Route [] = [
     JobListComponent,
     EspacePersoComponent,
     ProfilComponent,
-    ForumComponent
+    ForumComponent,
+    PostulationComponent,
+    InscriptionComponent
 
   ],
   imports: [
