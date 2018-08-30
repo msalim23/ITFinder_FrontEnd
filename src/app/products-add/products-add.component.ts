@@ -24,6 +24,6 @@ export class ProductsAddComponent implements OnInit {
   addJob() {
     this._service.addJob(this.job).subscribe(resp => console.log('creation avec succes'));
 
-    this._router.navigate(['/list']);
+    this._router.navigate(['/jobs']);
   }
 }

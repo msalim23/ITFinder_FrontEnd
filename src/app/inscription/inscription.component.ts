@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { IUtilisateur } from '../domain/iutilisateur';
+import { IDemandeur } from '../domain/idemandeur';
 import { Route, Router } from '../../../node_modules/@angular/router';
-import { JobsService } from '../services/jobs.service';
+import { DemandeursService } from '../services/demandeur.service';
 
 @Component({
   selector: 'app-inscription',
@@ -10,22 +10,21 @@ import { JobsService } from '../services/jobs.service';
 })
 export class InscriptionComponent implements OnInit {
 
-  utilisateur: IUtilisateur = {
+  utilisateur: IDemandeur = {
+    login: '',
+    password: '',
     nom: '',
     prenom: '',
     email: '',
-    adresse: '',
-    ville: '',
-    codepostal: '',
-    password: '',
-    login: ''
   };
 
-  constructor(private _service: JobsService, private _router: Router) { }
+  constructor(private _service: DemandeursService, private _router: Router) { }
 
-  inscription() {
-    this._service.inscription(this.utilisateur).subscribe(resp => console.log('inscrit avec succes'));
-}
+  addDemandeur() {
+    this._service.addDemandeur(this.utilisateur).subscribe(resp => console.log('creation avec succes'));
+
+    this._router.navigate(['/demandeurs']);
+  }
 
   ngOnInit() {
   }

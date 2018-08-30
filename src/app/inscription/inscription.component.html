@@ -1,50 +1,49 @@
 <div class="col col-lg-8 mx-auto mt-4">
-<form #f="ngForm" (ngSubmit)="inscription()">
+<form #f="ngForm" (ngSubmit)="addDemandeur()">
     <div class="form-row">
       <div class="form-group col-md-6">
-        <label for="inputEmail4">Email</label>
-        <input type="email" class="form-control" id="inputEmail4" placeholder="Email"
-            name="email" [(ngModel)]="utilisateur.email" #email="ngModel" required>
-            <div class="alert alert-danger" *ngIf="email.touched && email.invalid">Le code est obligatoire</div>
+        <label for="nom">Nom</label>
+        <input type="text" class="form-control" id="nom" placeholder="Nom"
+            name="nom" [(ngModel)]="utilisateur.nom" #nom="ngModel" required>
+            <div class="alert alert-danger" *ngIf="nom.touched && nom.invalid">Le nom est obligatoire</div>
       </div>
-      <div class="form-group col-md-5">
-        <label for="inputPassword4">Password</label>
-        <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
       </div>
-    </div>
-    <div class="form-group col-md-6">
-        <label for="inputPseudo">Login</label>
-        <input type="text" class="form-control" id="inputPseudo" placeholder="">
-      </div>
-    <div class="form-row">
-        <div class="form-group col-md-6">
-          <label for="inputNom">Nom</label>
-          <input type="text" class="form-control" id="inputNom" placeholder="Nom">
-        </div>
-        <div class="form-group col-md-5">
-          <label for="inputPrenom">Prénom</label>
-          <input type="text" class="form-control" id="inputPrenom" placeholder="Prénom">
-        </div>
-      </div>
-      <div class="form-group">
-      <label for="inputAddresse">Addresse</label>
-      <input type="text" class="form-control" id="inputAddresse" placeholder="Rue de la rue 69">
-    </div>
 
-    <div class="form-row">
-      <div class="form-group col-md-6">
-        <label for="inputVille">Ville</label>
-        <input type="text" class="form-control" id="inputVille">
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="prenom">Prenom</label>
+          <input type="text" class="form-control" id="prenom" placeholder="prenom"
+              name="prenom" [(ngModel)]="utilisateur.prenom" #prenom="ngModel" required>
+              <div class="alert alert-danger" *ngIf="prenom.touched && prenom.invalid">Le prenom est obligatoire</div>
+        </div>
       </div>
-      <div class="form-group col-md-4">
-          <label for="inputCommune">Commune</label>
-          <input type="text" class="form-control" id="inputCommune">
-      </div>
-      <div class="form-group col-md-2">
-        <label for="inputCP">Code postal</label>
-        <input type="text" class="form-control" id="inputCP">
-      </div>
-    </div>
+
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="login">login</label>
+            <input type="text" class="form-control" id="login" placeholder="login"
+                name="login" [(ngModel)]="utilisateur.login" #login="ngModel" required>
+                <div class="alert alert-danger" *ngIf="login.touched && login.invalid">Le login est obligatoire</div>
+          </div>
+        </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" id="password" placeholder="mot de passe"
+                  name="password" [(ngModel)]="utilisateur.password" #password="ngModel" required>
+                  <div class="alert alert-danger" *ngIf="password.touched && password.invalid">Le code est obligatoire</div>
+            </div>
+          </div>
+
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputEmail4">Email</label>
+                <input type="email" class="form-control" id="inputEmail4" placeholder="Email"
+                    name="email" [(ngModel)]="utilisateur.email" #email="ngModel" required>
+                    <div class="alert alert-danger" *ngIf="email.touched && email.invalid">Le code est obligatoire</div>
+              </div>
+            </div>
     <div class="form-group">
       <div class="form-check">
         <input class="form-check-input" type="checkbox" id="gridCheck">

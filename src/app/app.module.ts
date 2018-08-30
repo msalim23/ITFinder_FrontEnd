@@ -18,6 +18,7 @@ import { ProfilComponent } from './profil/profil.component';
 import { ForumComponent } from './forum/forum.component';
 import { PostulationComponent } from './postulation/postulation.component';
 import { InscriptionComponent } from './inscription/inscription.component';
+import { ListeDemandeursComponent } from './liste-demandeurs/liste-demandeurs.component';
 
 
 const routes: Route [] = [
@@ -31,6 +32,7 @@ const routes: Route [] = [
   {path: 'espace-perso', 'component': EspacePersoComponent},
   {path: 'profil', 'component': ProfilComponent},
   {path: 'forum', 'component': ForumComponent},
+  {path: 'demandeurs', 'component': ListeDemandeursComponent},
   {path: '**', 'component': NotFoundComponent},
 ];
 
@@ -48,7 +50,8 @@ const routes: Route [] = [
     ProfilComponent,
     ForumComponent,
     PostulationComponent,
-    InscriptionComponent
+    InscriptionComponent,
+    ListeDemandeursComponent
 
   ],
   imports: [
