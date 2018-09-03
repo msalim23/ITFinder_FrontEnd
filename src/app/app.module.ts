@@ -19,6 +19,7 @@ import { ForumComponent } from './forum/forum.component';
 import { PostulationComponent } from './postulation/postulation.component';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { ListeDemandeursComponent } from './liste-demandeurs/liste-demandeurs.component';
+import { LoginComponent } from './login/login.component';
 
 
 const routes: Route [] = [
@@ -33,6 +34,7 @@ const routes: Route [] = [
   {path: 'profil', 'component': ProfilComponent},
   {path: 'forum', 'component': ForumComponent},
   {path: 'demandeurs', 'component': ListeDemandeursComponent},
+  {path: 'login', 'component': LoginComponent},
   {path: '**', 'component': NotFoundComponent},
 ];
 
@@ -51,7 +53,8 @@ const routes: Route [] = [
     ForumComponent,
     PostulationComponent,
     InscriptionComponent,
-    ListeDemandeursComponent
+    ListeDemandeursComponent,
+    LoginComponent
 
   ],
   imports: [

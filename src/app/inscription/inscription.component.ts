@@ -23,7 +23,7 @@ export class InscriptionComponent implements OnInit {
   addDemandeur() {
     this._service.addDemandeur(this.utilisateur).subscribe(resp => console.log('creation avec succes'));
 
-    this._router.navigate(['/demandeurs']);
+    this._router.navigate(['/welcome']);
   }
 
   ngOnInit() {

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { IDemandeur } from '../domain/idemandeur';
+import { LoginService } from '../services/login.service';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  utilisateur: IDemandeur = {
+    login: '',
+    password: '',
+    nom: '',
+    prenom: '',
+    email: '',
+  };
+
+  constructor(private _service: LoginService) { }
 
   ngOnInit() {
+    this._service.getUser(this.utilisateur);
   }
 
 }
