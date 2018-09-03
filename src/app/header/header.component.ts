@@ -20,7 +20,10 @@ export class HeaderComponent implements OnInit {
   constructor(private _service: LoginService) { }
 
   ngOnInit() {
-    this._service.getUser(this.utilisateur);
+  }
+
+  login() {
+    this._service.login(this.utilisateur);
   }
 
 }

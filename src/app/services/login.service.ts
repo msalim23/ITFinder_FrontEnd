@@ -16,8 +16,4 @@ export class LoginService {
     return this._http.post(this.URL, loginInfo);
   }
 
-  getUser(demandeur: IDemandeur): Observable<any> {
-    return this._http.post(this.URL, demandeur);
-  }
-
 }

@@ -1,5 +1,5 @@
 <div class="col col-lg-6 mt-5 mx-auto">
-  <form action=login()>
+  <form #f="ngForm" (ngSubmit)="login()">
     <div class="form-group row">
       <label for="login" class="col-sm-2 col-form-label">Login</label>
       <div class="col-sm-10">
@@ -15,7 +15,7 @@
 
     <div class="form-group row">
       <div class="col-sm-10">
-        <button type="submit" class="btn btn-primary" [routerLink]="['/welcome']">Log in</button>
+        <button type="submit" class="btn btn-primary" [routerLink]="['/welcome']" >Log in</button>
       </div>
     </div>
   </form>

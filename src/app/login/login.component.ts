@@ -32,9 +32,7 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    this._service.login(this.loginInfo).subscribe(resp => console.log('connecté'));
-    this._service.getUser(this.utilisateur);
-    this._router.navigate(['/welcome']);
+    this._service.login(this.loginInfo).subscribe(resp => this.utilisateur);
 
   }
 
