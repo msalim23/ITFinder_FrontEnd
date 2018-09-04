@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IDemandeur } from '../domain/idemandeur';
+import { IUser } from '../domain/iuser';
 import { DemandeursService } from '../services/demandeur.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { DemandeursService } from '../services/demandeur.service';
 })
 export class ListeDemandeursComponent implements OnInit {
 
-  utilisateurs: IDemandeur[] ;
+  utilisateurs: IUser[] ;
 
   constructor(private _service: DemandeursService) { }
 

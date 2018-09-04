@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { IDemandeur } from '../domain/idemandeur';
+import { IUser } from '../domain/iuser';
 import { LoginService } from '../services/login.service';
+import { ILoginInfo } from '../domain/ilogin-info';
 
 @Component({
   selector: 'app-header',
@@ -9,12 +10,24 @@ import { LoginService } from '../services/login.service';
 })
 export class HeaderComponent implements OnInit {
 
-  utilisateur: IDemandeur = {
+  utilisateur: IUser = {
     login: '',
     password: '',
     nom: '',
     prenom: '',
     email: '',
+    cv: '',
+    actif: true,
+    candidatures: [],
+    nomEntreprise: '',
+    adresseEntreprise: '',
+    numTel: '',
+    siteWeb: '',
+  };
+
+  loginInfo: ILoginInfo = {
+    login: '',
+    password: ''
   };
 
   constructor(private _service: LoginService) { }
@@ -23,7 +36,7 @@ export class HeaderComponent implements OnInit {
   }
 
   login() {
-    this._service.login(this.utilisateur);
+    this._service.login(this.loginInfo).subscribe((resp: IUser) => this.utilisateur = resp);
   }
 
 }

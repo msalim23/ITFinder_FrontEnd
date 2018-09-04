@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IDemandeur } from '../domain/idemandeur';
+import { IUser } from '../domain/iuser';
 import { Route, Router } from '../../../node_modules/@angular/router';
 import { DemandeursService } from '../services/demandeur.service';
 
@@ -10,12 +10,19 @@ import { DemandeursService } from '../services/demandeur.service';
 })
 export class InscriptionComponent implements OnInit {
 
-  utilisateur: IDemandeur = {
+  utilisateur: IUser = {
     login: '',
     password: '',
     nom: '',
     prenom: '',
     email: '',
+    cv: '',
+    actif: true,
+    candidatures: [],
+    nomEntreprise: '',
+    adresseEntreprise: '',
+    numTel: '',
+    siteWeb: '',
   };
 
   constructor(private _service: DemandeursService, private _router: Router) { }
